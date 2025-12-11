@@ -13,3 +13,5 @@ langchain_openai
 langgraph
 ipykernel
 google-genai
+streamlit
+google-api-core

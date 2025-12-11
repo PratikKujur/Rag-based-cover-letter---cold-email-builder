@@ -6,7 +6,13 @@ def process_pdf_or_text_files(resume_pdf_path: str):
         all_docs=[]
         resume_pdf_path=Path(resume_pdf_path)
 
-        resume_pdf_files=list(resume_pdf_path.glob("**/*.pdf"))
+        # Handle both file and directory paths
+        if resume_pdf_path.is_file() and resume_pdf_path.suffix == '.pdf':
+            # Single PDF file case
+            resume_pdf_files = [resume_pdf_path]
+        else:
+            # Directory case - glob for all PDFs
+            resume_pdf_files = list(resume_pdf_path.glob("**/*.pdf"))
 
         print(f"Found {len(resume_pdf_files)} PDF files to process")
 
