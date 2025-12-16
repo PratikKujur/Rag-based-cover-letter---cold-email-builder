@@ -15,3 +15,5 @@ ipykernel
 google-genai
 streamlit
 google-api-core
+fastapi
+fastapi[standard]
